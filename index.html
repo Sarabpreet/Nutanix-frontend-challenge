@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="customersCtrl">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title> Nutanix Hiring Challenge</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="css/font-awesome.css">
+
+
+
+</head>
+<body>
+
+
+  
+
+
+
+
+
+
+<div class="top"></div>
+  
+<header>
+  
+<div class="branding">
+  
+<div class="logoH"></div>
+<div class="logo"><span class="bold">Deals</span><span class="thin">hub</span></div>
+<div class="tagline">Finding Deals Made Easy</div>
+</div>
+<div class="hits hide-on-small-only">
+  <p>Total Hits</p>
+  <div class="num">18</div>
+
+</div>
+
+</header>
+
+
+
+<section class="filter">
+  
+
+  <nav>
+    <ul>
+      <li class="head"><i class="tiny material-icons">import_export</i> Filters</li>
+      <li><a href="#"> <i class="tiny material-icons">shopping_cart</i> Price</a></li>
+      <li><a href="#" ng-click="hi(a,b)"> <i class="tiny material-icons">info</i>  Discount</a></li>
+
+    </ul>
+  </nav>
+</section>
+
+<section class="products container"> 
+
+
+<div class="row">
+  
+
+ <div class="product " ng-repeat="x in deals">
+<h3>{{x.name}}</h3>
+<div class="product-meta">
+  <div class="soldby col l4">Sold by <span class="vl"> {{x.provider}} </span></div>
+  <div class="linkc col l8"> link <a href="{{x.link}}" target="_blank"> {{x.link |limitTo: 30}} {{x.link.length < 20 ? '' : '...'}}</a> </div>
+</div>
+
+
+
+
+<div class="product-meta col l6">
+<div class="pimg"><img src="{{x.image}}" alt="{{x.name}} " width="100%" height="100%"></div>
+<div class="desc"><p>this is the small little description for {{x.name}}</p></div>
+</div>
+<div class="product-meta col l6">
+<div class="rate">
+
+Rating: {{x.rating}}
+
+</div>
+<div class="price">Price:{{x.actual_price/x.discount.replace('%','')*100 | number:0}} </div>
+
+<div class="deal ">Deal: {{x.actual_price}} </div>
+<div class="discount">{{x.discount}} Off</div>
+<div class="like"> <div class="likeh">Like</div> {{getlikes}}</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+</section>
+
+
+<section class="thatsall">
+  
+  <div class=""></div>
+- thats all folks -
+ 
+
+
+</section>
+<footer class="row">
+  
+
+<div class="col l8">
+  
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Challenge</a></li>
+      <li><a href="#">About Sarabpreet</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="col l4">
+  
+<p>Designed &amp; developed by Sarabpreet</p>
+<p class="up">For Nutanix Hiring Challenge</p>
+
+</div>
+
+
+
+
+</footer>
+
+
+
+
+  <script src="js/ng.js"></script> 
+
+  <script src="js/jq.js"></script> 
+  <!-- jquery -->
+  <script src="js/materialize.js"></script>
+  <!-- Materialize -->
+
+  <script src="js/init.js"></script>
+<!-- materialize js configs -->
+
+
+  <script src="js/main.js"></script>
+<!-- our main js file... -->
+
+  </body>
+</html>
